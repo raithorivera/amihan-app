@@ -1,3 +1,4 @@
+import { Input } from '@/components/ui/input';
 import { Waveform } from '@/components/waveform';
 import Image from 'next/image';
 
@@ -17,21 +18,26 @@ export default function HomePage() {
       </div>
 
       <div className='ml-16 relative'>
-        <header className='bg-slate-50 lg:fixed lg:inset-y-0 lg:left-16 lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120 bg-gradient-to-b from-lime-50 via-white via-90% to-slate-50'>
+        <header className='bg-slate-50 lg:fixed lg:inset-y-0 lg:left-16 lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120 bg-gradient-to-b from-cyan-50 via-white to-sky-50 shadow pb-10'>
           <div className='mt-10 px-8 py-4'>
             <div className='flex items-center justify-between px-3'>
               <div className=''>
                 <h2 className='text-lg leading-tight'>Today, 22 May 2024</h2>
                 <h1 className='text-4xl font-bold leading-tight tracking-tighter'>Manila, PH</h1>
+                <p className='text-sm'>14.6042, 120.9822</p>
               </div>
 
               <Image src='https://openweathermap.org/img/wn/10d@4x.png' width={100} height={100} alt='Weather Icon' className='' />
             </div>
 
-            <div className='mt-2 relative'>
+            <div className='px-4 mt-6'>
+              <Input placeholder='Search' className='py-6 px-6' />
+            </div>
+
+            <div className='mt-6 relative'>
               <Image src='/images/bg_svg/morning.svg' width={540} height={160} alt='Weather Image' className='shadow-lg rounded-[20px]' />
 
-              <div className='absolute bottom-4 left-6'>
+              <div className='absolute bottom-5 left-6'>
                 <h2 className='text-5xl text-white font-light leading-none tracking-tighter select-none'>
                   26.9<sup className='text-xl -top-8'>&deg;C</sup>
                 </h2>
@@ -41,47 +47,49 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className='mt-2 relative grid grid-cols-3 gap-4 py-6 px-4  bg-gradient-to-r from-white to-amber-50 drop-shadow-sm'>
-            <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
-              <p className='text-sm font-medium text-slate-700'>Temperature</p>
+          {/* Temperature */}
+          <div className='mt-2 relative grid grid-cols-3 gap-x-4 gap-y-8 py-8 pl-8 pr-4 bg-gradient-to-t from-lime-50 to-sky-50 drop-shadow-sm'>
+            <div className='flex flex-col justify-between gap-2'>
+              <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Temperature</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>
                 26.9<sup className='text-lg -top-4'>&deg;C</sup>
               </h3>
             </div>
-            <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
-              <p className='text-sm font-medium text-slate-700'>Minimum</p>
+            <div className='flex flex-col justify-between gap-2'>
+              <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Minimum</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>
                 26.9<sup className='text-lg -top-4'>&deg;C</sup>
               </h3>
             </div>
-            <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
-              <p className='text-sm font-medium text-slate-700'>Maximum</p>
+            <div className='flex flex-col justify-between gap-2'>
+              <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Maximum</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>
                 26.9<sup className='text-lg -top-4'>&deg;C</sup>
               </h3>
             </div>
-            <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
-              <p className='text-sm font-medium text-slate-700'>Feels Like</p>
+            <div className='flex flex-col justify-between gap-2'>
+              <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Feels Like</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>
                 26.9<sup className='text-lg -top-4'>&deg;C</sup>
               </h3>
             </div>
-            <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
-              <p className='text-sm font-medium text-slate-700'>Humidity</p>
+            <div className='flex flex-col justify-between gap-2'>
+              <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Humidity</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>64</h3>
             </div>
-            <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
-              <p className='text-sm font-medium text-slate-700'>Pressure</p>
+            <div className='flex flex-col justify-between gap-2'>
+              <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Pressure</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>1007</h3>
             </div>
           </div>
 
-          <div className='flex items-center justify-between p-8'>
+          {/* Sunset/Sunrise */}
+          <div className='mt-4 grid grid-cols-2 justify-between p-8'>
             <div className='flex items-center gap-6'>
               <Image src='/images/icon_svg/sunrise.svg' width={65} height={65} alt='Sunrise Image' className='' />
               <div className='grid gap-1'>
                 <p className='text-sm'>Sunrise</p>
-                <h3 className='text-2xl font-semibold leading-none tracking-tighter select-none'>6:00 PM</h3>
+                <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>6:00 PM</h3>
               </div>
             </div>
 
@@ -90,7 +98,29 @@ export default function HomePage() {
 
               <div className='grid gap-1'>
                 <p className='text-sm'>Sunset</p>
-                <h3 className='text-2xl font-semibold leading-none tracking-tighter select-none'>6:00 AM</h3>
+                <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>6:00 AM</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Wind */}
+          <div className='flex items-center justify-between p-8'>
+            <div className='grid grid-cols-4 gap-6'>
+              <Image src='/images/icon_svg/cloud-gust.svg' width={65} height={65} alt='Sunrise Image' className='' />
+
+              <div className='grid gap-1'>
+                <p className='text-sm'>Wind Speed</p>
+                <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>1.79</h3>
+              </div>
+
+              <div className='grid gap-1'>
+                <p className='text-sm'>Direction</p>
+                <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>356&deg;</h3>
+              </div>
+
+              <div className='grid gap-1'>
+                <p className='text-sm'>Wind Gust</p>
+                <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>8.94</h3>
               </div>
             </div>
           </div>
