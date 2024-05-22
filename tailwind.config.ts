@@ -17,6 +17,10 @@ const config = {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans]
       },
+      fontSize: {
+        '2xs': '10px',
+        '2xl': '30px',
+      },
       spacing: {
         18: '4.5rem',
         112: '28rem',

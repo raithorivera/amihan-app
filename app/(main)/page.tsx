@@ -21,7 +21,10 @@ export default function HomePage() {
 
         <main className='border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120'>
           <Waveform className='absolute left-0 top-0 h-20 w-full' />
-          <div className='relative'>RIGHT</div>
+
+          <div className='relative lg:p-20 p-4'>
+            <h1 className='text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50 pb-4'>Daily Forecast</h1>
+          </div>
         </main>
       </div>
     </div>
