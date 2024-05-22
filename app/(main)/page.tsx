@@ -17,7 +17,7 @@ export default function HomePage() {
       </div>
 
       <div className='ml-16 relative'>
-        <header className='bg-slate-50 lg:fixed lg:inset-y-0 lg:left-16 lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120 bg-gradient-to-r from-lime-50 via-white-50 via-orange-50 to-amber-50'>
+        <header className='bg-slate-50 lg:fixed lg:inset-y-0 lg:left-16 lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120 bg-gradient-to-b from-lime-50 via-white via-90% to-slate-50'>
           <div className='mt-10 px-8 py-4'>
             <div className='flex items-center justify-between px-3'>
               <div className=''>
@@ -73,6 +73,25 @@ export default function HomePage() {
             <div className='flex flex-col justify-between gap-2 border-l-2 border-orange-600 pl-4'>
               <p className='text-sm font-medium text-slate-700'>Pressure</p>
               <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none'>1007</h3>
+            </div>
+          </div>
+
+          <div className='flex items-center justify-between p-8'>
+            <div className='flex items-center gap-6'>
+              <Image src='/images/icon_svg/sunrise.svg' width={65} height={65} alt='Sunrise Image' className='' />
+              <div className='grid gap-1'>
+                <p className='text-sm'>Sunrise</p>
+                <h3 className='text-2xl font-semibold leading-none tracking-tighter select-none'>6:00 PM</h3>
+              </div>
+            </div>
+
+            <div className='flex items-center gap-6'>
+              <Image src='/images/icon_svg/sunset.svg' width={65} height={65} alt='Sunset Image' className='' />
+
+              <div className='grid gap-1'>
+                <p className='text-sm'>Sunset</p>
+                <h3 className='text-2xl font-semibold leading-none tracking-tighter select-none'>6:00 AM</h3>
+              </div>
             </div>
           </div>
         </header>
