@@ -19,7 +19,10 @@ const config = {
       },
       fontSize: {
         '2xs': '10px',
-        '2xl': '30px',
+        '2xl': '26px',
+        '3xl': '34px',
+        '4xl': '48px',
+        '5xl': '56px',
       },
       spacing: {
         18: '4.5rem',
