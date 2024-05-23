@@ -29,7 +29,7 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
   }
 
   return (
-    <div className='relative xl:p-20 lg:p-10 p-4 pb-10 xl:max-w-[1440px]'>
+    <div className='relative xl:p-16 lg:p-10 p-4 pb-10 xl:max-w-[1440px]'>
       {!forecastQueryData?.isFetching && isEmptyArray(forecastList) ? (
         <EmptyComponent title='No weather forecast to display!' />
       ) : (

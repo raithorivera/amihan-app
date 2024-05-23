@@ -4,12 +4,27 @@ import React, { useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 
-import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@ui';
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipPortal,
+  TooltipProvider,
+  TooltipTrigger
+} from '@ui';
 import { toast } from 'sonner';
 
 import { DEFAULT_UNIT } from '@/constant/main';
 
 import { Icon } from '@/components/icon.component';
+import { TooltipComponent } from '@/components/tooltip.component';
 
 export default function SideNavComponent() {
   const router = useRouter();
@@ -51,9 +66,11 @@ export default function SideNavComponent() {
       <div className='flex gap-4 mt-auto'>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant='outline' size='icon'>
-              <Icon.cog className='h-4 w-4' />
-            </Button>
+            <TooltipComponent content='Change units of measurement.'>
+              <Button variant='outline' size='icon'>
+                <Icon.cog className='h-4 w-4' />
+              </Button>
+            </TooltipComponent>
           </DropdownMenuTrigger>
           <DropdownMenuContent className='w-56' side='right'>
             <DropdownMenuLabel>Units of Measurement</DropdownMenuLabel>
@@ -66,13 +83,17 @@ export default function SideNavComponent() {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <Button variant='outline' size='icon' onClick={onChangeTheme}>
-          <Icon.palette className='h-4 w-4' />
-        </Button>
+        <TooltipComponent content='Change theme from dark or light.'>
+          <Button variant='outline' size='icon' onClick={onChangeTheme}>
+            <Icon.palette className='h-4 w-4' />
+          </Button>
+        </TooltipComponent>
 
-        <Button variant='outline' size='icon' onClick={onChangeLanguage}>
-          <Icon.languages className='h-4 w-4' />
-        </Button>
+        <TooltipComponent content='Change system language.'>
+          <Button variant='outline' size='icon' onClick={onChangeLanguage}>
+            <Icon.languages className='h-4 w-4' />
+          </Button>
+        </TooltipComponent>
       </div>
     </div>
   );

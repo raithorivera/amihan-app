@@ -4,7 +4,7 @@ import './globals.css';
 
 import { TanstackProvider } from '@/providers/tanstack.provider';
 import { TailwindIndicator } from '@/components/tailwind-indicator.component';
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@ui';
 
 import { siteConfig } from '@/config/site.config';
 import { cn } from '@/util/class.util';
