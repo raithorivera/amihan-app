@@ -1,9 +1,16 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Waveform } from '@/components/waveform';
 import Image from 'next/image';
+import { Input, Button } from '@ui';
 
-export default function HomePage() {
+import { Waveform } from '@/components/waveform.component';
+
+import { axiosInstance } from '@/util/axios.util';
+
+export default async function HomePage() {
+  // useEffect(async () => {
+  //   const returnData = await axiosInstance.get('/weather?q=Manila');
+  //   console.log('returnData', returnData);
+  // }, []);
+
   return (
     <div>
       <div className='fixed top-0 flex w-16 flex-none items-center whitespace-nowrap py-12 text-sm leading-7 [writing-mode:vertical-rl] bg-white h-screen border-x border-slate-200'>

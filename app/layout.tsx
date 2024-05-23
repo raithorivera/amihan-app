@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 
-import { TailwindIndicator } from '@/components/tailwind-indicator';
+import { TanstackProvider } from '@/providers/tanstack.provider';
+import { TailwindIndicator } from '@/components/tailwind-indicator.component';
 import { Toaster } from '@/components/ui/sonner';
 
 import { siteConfig } from '@/config/site.config';
@@ -22,9 +23,9 @@ export const metadata: Metadata = {
   icons: {
     icon: ['/favicon/favicon.ico'],
     apple: ['/favicon/apple-touch-icon.png'],
-    shortcut: ['/favicon/apple-touch-icon.png'],
+    shortcut: ['/favicon/apple-touch-icon.png']
   },
-  manifest: '/favicon/site.webmanifest',
+  manifest: '/favicon/site.webmanifest'
 };
 
 export const viewport: Viewport = {
@@ -42,10 +43,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en'>
       <body className={cn('min-h-screen bg-background font-sans antialiased w-full', fontSans.variable)}>
-        {children}
+        <TanstackProvider>
+          {children}
 
-        <TailwindIndicator />
-        <Toaster visibleToasts={5} position='top-right' closeButton richColors pauseWhenPageIsHidden={true} toastOptions={{ duration: 3000 }} />
+          <TailwindIndicator />
+          <Toaster visibleToasts={5} position='top-right' closeButton richColors pauseWhenPageIsHidden={true} toastOptions={{ duration: 3000 }} />
+        </TanstackProvider>
       </body>
     </html>
   );
