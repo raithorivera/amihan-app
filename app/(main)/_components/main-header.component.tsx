@@ -1,15 +1,24 @@
 'use client';
 
 import Image from 'next/image';
+import { useMemo } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Input, Button } from '@ui';
 
 import { formatDate } from '@/util/date.util';
+import { getWeatherIcon } from '@/util/image.util';
+import { getTemperatureSymbol } from '@/util/temparature.util';
 
 import { useWeatherCity } from '../_hooks/use-weather-city.hook';
 
 export default function MainHeaderComponent() {
+  const searchParams = useSearchParams();
+  const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
+
+  const unit = params?.unit || '';
   const dateToday = new Date()?.toString();
-  const weatherCityQueryData = useWeatherCity('London');
+
+  const weatherCityQueryData = useWeatherCity('London', params);
   const weatherData = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
   console.log('weatherData', weatherData);
 
@@ -24,7 +33,7 @@ export default function MainHeaderComponent() {
           <p className='text-sm'>{`${weatherData?.coord?.lat || ''}, ${weatherData?.coord?.lon || ''}`}</p>
         </div>
 
-        <Image src={`https://openweathermap.org/img/wn/${weatherData?.weather?.[0]?.icon}@4x.png`} width={100} height={100} alt='Weather Icon' className='' />
+        <Image src={getWeatherIcon(weatherData?.weather?.[0]?.icon)} width={100} height={100} alt='Weather Icon' className='' />
       </div>
 
       <div className='px-3 mt-6 relative'>
@@ -39,10 +48,11 @@ export default function MainHeaderComponent() {
 
         <div className='absolute bottom-5 left-6'>
           <h2 className='text-5xl text-white font-light leading-none tracking-tighter select-none'>
-            26.9<sup className='text-xl -top-8'>&deg;C</sup>
+            {weatherData?.main?.temp}
+            <sup className='text-xl -top-8'>{getTemperatureSymbol(unit)}</sup>
           </h2>
 
-          <p className='capitalize text-white text-sm leading-tight ml-1 font-semibold'>overcast clouds</p>
+          <p className='capitalize text-white text-sm leading-tight ml-1 font-semibold'>{weatherData?.weather?.[0]?.description}</p>
         </div>
       </div>
     </div>
