@@ -10,7 +10,7 @@ export function useWeatherParams() {
   const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
 
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
-  const [city, setCity] = useState(DEFAULT_CITY);
+  const [city, setCity] = useState(params?.city || DEFAULT_CITY);
 
   const unit = params?.unit || '';
 
@@ -22,13 +22,13 @@ export function useWeatherParams() {
           setLocation({ lat: latitude, lon: longitude });
         },
         () => {
-          setCity(DEFAULT_CITY);
+          setCity(params?.city || DEFAULT_CITY);
         }
       );
     } else {
-      setCity(DEFAULT_CITY);
+      setCity(params?.city || DEFAULT_CITY);
     }
-  }, []);
+  }, [params?.city]);
 
   return {
     params,

@@ -37,7 +37,7 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
           const dateTime = (item?.dt > 0 ? parseInt(item?.dt) * 1000 : '') as string;
 
           return (
-            <div key={'fci_' + item.dt} className='p-4 bg-slate-50 bg-gradient-to-l from-lime-50 to-sky-50 shadow-sm rounded-md'>
+            <div key={'fci_' + item.dt} className='p-4 bg-slate-50  shadow-sm rounded-md odd:bg-gradient-to-l odd:from-lime-50 odd:to-sky-50 even:bg-gradient-to-r even:from-cyan-50 even:to-slate-50'>
               <div className='flex items-center justify-between'>
                 <div className='leading-tight tracking-tighter'>
                   <h4 className='font-light text-sm'>{formatDate(dateTime)}</h4>
@@ -56,7 +56,7 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
                     <sup className='text-sm -top-2 left-1'>{getTemperatureSymbol(unit)}</sup>
                   </h2>
 
-                  <p className='capitalize text-white text-xs leading-tight font-semibold'>overcast clouds</p>
+                  <p className='capitalize text-white text-xs leading-tight font-semibold'>{item?.weather?.[0]?.description}</p>
                 </div>
               </div>
 
