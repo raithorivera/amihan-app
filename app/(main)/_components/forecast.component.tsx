@@ -1,8 +1,23 @@
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
 
-export default function ForecastComponent() {
+import { useForecast } from '../_hooks/use-forecast.hook';
+import { useWeatherParams } from '../_hooks/use-weather-params.hook';
+
+import type { TForecastData } from '@/types/index';
+
+interface ForecastComponentProps {
+  children?: React.ReactNode;
+}
+
+export default function ForecastComponent({ children }: ForecastComponentProps) {
+  const weatherParams = useWeatherParams();
+
+  const forecastQueryData = useForecast(weatherParams?.location ? { lat: weatherParams?.location?.lat, lon: weatherParams?.location?.lon, ...weatherParams } : { ...weatherParams });
+  const forecastData: TForecastData = forecastQueryData?.data ? forecastQueryData?.data : {};
+
   return (
     <div className='relative xl:p-20 lg:p-10 p-4 pb-10 xl:max-w-[1440px]'>
       <div>

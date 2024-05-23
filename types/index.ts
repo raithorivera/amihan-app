@@ -2,3 +2,4 @@
 export type TTodo = any;
 
 export type TWeatherData = TTodo;
+export type TForecastData = TTodo;
