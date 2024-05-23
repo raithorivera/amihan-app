@@ -17,7 +17,7 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`
+    template: `%s - ${siteConfig.name} | ${siteConfig.description}`
   },
   description: siteConfig.description,
   icons: {

@@ -22,7 +22,7 @@ export default function MainHeaderComponent() {
   const dateToday = new Date()?.toString();
 
   const weatherCityQueryData = useWeatherCity(city, params);
-  const weatherData = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
+  const weatherData: any = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
 
   return (
     <div className='mt-10 px-8 py-4'>

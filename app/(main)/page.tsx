@@ -1,10 +1,15 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
-import { Input, Button } from '@ui';
 
 import { Waveform } from '@/components/waveform.component';
 
 import SideNavComponent from './_components/side-nav.component';
 import MainHeaderComponent from './_components/main-header.component';
+import TemperatureComponent from './_components/temperature.component';
+
+export const metadata: Metadata = {
+  title: 'Home'
+};
 
 export default async function HomePage() {
   return (
@@ -15,70 +20,9 @@ export default async function HomePage() {
         <header className='bg-slate-50 lg:fixed lg:inset-0 lg:w-112 lg:left-16 xl:w-120 bg-gradient-to-b from-cyan-50 via-white to-sky-50 lg:shadow relative h-full overflow-y-auto lg:items-start flex flex-col'>
           <div className='z-10 relative'>
             <MainHeaderComponent />
-            {/* <div className='mt-10 px-8 py-4'>
-              <div className='flex items-center justify-between px-3'>
-                <div className=''>
-                  <h2 className='text-lg leading-tight'>Today, 22 May 2024</h2>
-                  <h1 className='text-4xl font-bold leading-tight tracking-tighter'>Manila, PH</h1>
-                  <p className='text-sm'>14.6042, 120.9822</p>
-                </div>
-
-                <Image src='https://openweathermap.org/img/wn/10d@4x.png' width={100} height={100} alt='Weather Icon' className='' />
-              </div>
-
-              <div className='px-3 mt-6 relative'>
-                <Input placeholder='Search' className='py-6 pl-4 pr-[90px]' />
-                <Button size='sm' className='absolute top-[10px] right-[24px]'>
-                  Search
-                </Button>
-              </div>
-
-              <div className='mt-6 relative'>
-                <Image src='/images/bg_svg/cloudy.svg' width={1540} height={160} alt='Weather Image' className='shadow-lg rounded-[46px] lg:rounded-[20px]' />
-
-                <div className='absolute bottom-5 left-6'>
-                  <h2 className='text-5xl text-white font-light leading-none tracking-tighter select-none'>
-                    26.9<sup className='text-xl -top-8'>&deg;C</sup>
-                  </h2>
-
-                  <p className='capitalize text-white text-sm leading-tight ml-1 font-semibold'>overcast clouds</p>
-                </div>
-              </div>
-            </div> */}
 
             {/* Temperature */}
-            <div className='mt-2 relative grid grid-cols-3 gap-x-4 gap-y-8 py-8 pl-8 pr-4 bg-gradient-to-l from-lime-50 to-sky-50 drop-shadow-sm'>
-              <div className='flex flex-col justify-between gap-2'>
-                <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Minimum</p>
-                <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
-                  26.9<sup className='text-lg -top-4'>&deg;C</sup>
-                </h3>
-              </div>
-              <div className='flex flex-col justify-between gap-2'>
-                <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Maximum</p>
-                <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
-                  26.9<sup className='text-lg -top-4'>&deg;C</sup>
-                </h3>
-              </div>
-              <div className='flex flex-col justify-between gap-2'>
-                <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Feels Like</p>
-                <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
-                  26.9<sup className='text-lg -top-4'>&deg;C</sup>
-                </h3>
-              </div>
-              <div className='flex flex-col justify-between gap-2'>
-                <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Humidity</p>
-                <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>64</h3>
-              </div>
-              <div className='flex flex-col justify-between gap-2'>
-                <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Pressure</p>
-                <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>1007</h3>
-              </div>
-              <div className='flex flex-col justify-between gap-2'>
-                <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Visibility</p>
-                <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>2699</h3>
-              </div>
-            </div>
+            <TemperatureComponent />
 
             {/* Sunset/Sunrise */}
             <div className='mt-4 grid grid-cols-2 justify-between p-8'>
