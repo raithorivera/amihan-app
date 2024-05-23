@@ -10,7 +10,7 @@ export function useWeatherParams() {
   const queryClient = useQueryClient();
 
   const searchParams = useSearchParams();
-  const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
+  const params = Object.fromEntries(searchParams);
 
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [city, setCity] = useState(params?.city || DEFAULT_CITY);

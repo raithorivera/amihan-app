@@ -18,7 +18,7 @@ export default async function HomePage() {
 
       <div className='ml-16 relative'>
         <header className='bg-slate-50 lg:fixed lg:inset-0 lg:w-112 lg:left-16 xl:w-120 bg-gradient-to-b from-cyan-50 via-white to-sky-50 lg:shadow relative h-full overflow-y-auto lg:items-start flex flex-col'>
-          <div className='z-10 relative'>
+          <div className='z-10 relative w-full'>
             {/* Main Weather Component */}
             <WeatherComponent />
           </div>
@@ -28,7 +28,7 @@ export default async function HomePage() {
           </div>
         </header>
 
-        <main className='lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120 mt-2 bg-gradient-to-l from-gray-50 via-100%'>
+        <main className='lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120 mt-2 bg-gradient-to-b from-gray-50 via-100%'>
           <Waveform className='absolute left-0 top-0 h-20 w-full' />
           <ForecastComponent />
         </main>

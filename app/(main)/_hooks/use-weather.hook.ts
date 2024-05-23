@@ -1,7 +1,8 @@
 'use client';
 
-import { axiosInstance } from '@/util/axios.util';
 import { useQuery } from '@tanstack/react-query';
+
+import { axiosInstance } from '@/util/axios.util';
 
 import { TIME_10_MINUTES } from '@/constant/query';
 
