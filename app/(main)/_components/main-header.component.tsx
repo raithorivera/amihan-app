@@ -9,9 +9,9 @@ import { DEFAULT_CITY } from '@/constant/main';
 
 import { formatDate } from '@/util/date.util';
 import { getWeatherIcon } from '@/util/image.util';
-import { getTemperatureSymbol } from '@/util/temparature.util';
+import { getTemperatureSymbol } from '@/util/temperature.util';
 
-import { useWeatherCity } from '../_hooks/use-weather-city.hook';
+import { useWeather } from '../_hooks/use-weather.hook';
 
 export default function MainHeaderComponent() {
   const searchParams = useSearchParams();
@@ -21,8 +21,8 @@ export default function MainHeaderComponent() {
   const city = params?.city || DEFAULT_CITY;
   const dateToday = new Date()?.toString();
 
-  const weatherCityQueryData = useWeatherCity(city, params);
-  const weatherData: any = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
+  const weatherQueryData = useWeather({ city, ...params });
+  const weatherData: any = weatherQueryData?.data ? weatherQueryData?.data : {};
 
   return (
     <div className='mt-10 px-8 py-4'>

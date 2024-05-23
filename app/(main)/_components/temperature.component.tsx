@@ -5,10 +5,10 @@ import { useSearchParams } from 'next/navigation';
 
 import { DEFAULT_CITY } from '@/constant/main';
 
-import { getTemperatureSymbol } from '@/util/temparature.util';
+import { getTemperatureSymbol } from '@/util/temperature.util';
 import { formatNumber } from '@/util/number.util';
 
-import { useWeatherCityCachedData } from '../_hooks/use-weather-city.hook';
+import { useWeatherCachedData } from '../_hooks/use-weather.hook';
 
 export default function TemperatureComponent() {
   const searchParams = useSearchParams();
@@ -17,8 +17,8 @@ export default function TemperatureComponent() {
   const unit = params?.unit || '';
   const city = params?.city || DEFAULT_CITY;
 
-  const weatherCityQueryData = useWeatherCityCachedData(city, params);
-  const weatherData: any = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
+  const weatherQueryData = useWeatherCachedData({ city, ...params });
+  const weatherData: any = weatherQueryData?.data ? weatherQueryData?.data : {};
 
   return (
     <div className='mt-2 relative grid grid-cols-3 gap-x-4 gap-y-8 py-8 pl-8 pr-4 bg-gradient-to-l from-lime-50 to-sky-50 drop-shadow-sm'>

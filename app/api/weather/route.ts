@@ -6,14 +6,25 @@ export async function GET(request: NextRequest) {
   const url = new URL(request.url);
 
   const city = url.searchParams.get('city');
+  const lat = url.searchParams.get('lat');
+  const lon = url.searchParams.get('lon');
   const unit = url.searchParams.get('unit') || '';
 
-  if (!city) {
-    return NextResponse.json({ statusCode: 400, message: 'City is not provided!' });
+  if (!city && (!lat || !lon)) {
+    return NextResponse.json({ statusCode: 400, message: 'Either city or lat/lon must be provided!' });
   }
 
   try {
-    const data = await fetchData('weather', { q: city, units: unit });
+    const params: Record<string, string> = {};
+    if (city) {
+      params.q = city;
+    } else if (lat && lon) {
+      params.lat = lat;
+      params.lon = lon;
+    }
+    params.units = unit;
+
+    const data = await fetchData('weather', params);
     return NextResponse.json(data);
   } catch (error: any) {
     return NextResponse.json({ statusCode: 400, message: error.message || 'Invalid request!' });
