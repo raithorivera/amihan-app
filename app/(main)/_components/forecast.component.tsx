@@ -5,7 +5,7 @@ import React from 'react';
 
 import type { TForecastData, TWeatherData } from '@/types/index';
 import { formatDate, formatForecastTime } from '@/util/date.util';
-import { getWeatherIcon } from '@/util/image.util';
+import { getWeatherIcon, getWeatherBanner } from '@/util/image.util';
 import { getTemperatureSymbol, getHumiditySymbol, getPressureSymbol, getVisibilitySymbol } from '@/util/symbol.util';
 import { formatNumber } from '@/util/number.util';
 
@@ -48,7 +48,7 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
               </div>
 
               <div className='mt-2 relative'>
-                <Image src='/images/bg_svg/cloudy.svg' width={540} height={160} alt='Weather Image' />
+                <Image src={getWeatherBanner(item?.weather?.[0]?.description, item?.weather?.[0]?.icon)} width={540} height={160} alt='Weather Image' />
 
                 <div className='absolute bottom-2 left-4'>
                   <h2 className='text-xl text-white font-light leading-none tracking-tighter select-none'>

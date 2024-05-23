@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Input, Button } from '@ui';
 
 import { formatDate } from '@/util/date.util';
-import { getWeatherIcon } from '@/util/image.util';
+import { getWeatherBanner, getWeatherIcon } from '@/util/image.util';
 import { getTemperatureSymbol } from '@/util/symbol.util';
 
 import type { TWeatherData } from '@/types/index';
@@ -39,7 +39,7 @@ export default function HeaderComponent({ weatherData, unit }: HeaderComponentPr
       </div>
 
       <div className='mt-6 relative'>
-        <Image src='/images/bg_svg/cloudy.svg' width={1540} height={160} alt='Weather Image' className='shadow-lg rounded-[46px] lg:rounded-[20px]' />
+        <Image src={getWeatherBanner(weatherData?.weather?.[0]?.description, weatherData?.weather?.[0]?.icon)} width={1540} height={160} alt='Weather Image' className='shadow-lg rounded-[46px] lg:rounded-[20px]' />
 
         <div className='absolute bottom-5 left-6'>
           <h2 className='text-5xl text-white font-light leading-none tracking-tighter select-none'>
