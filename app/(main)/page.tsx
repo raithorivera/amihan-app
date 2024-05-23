@@ -6,6 +6,7 @@ import { Waveform } from '@/components/waveform.component';
 import SideNavComponent from './_components/side-nav.component';
 import MainHeaderComponent from './_components/main-header.component';
 import TemperatureComponent from './_components/temperature.component';
+import WeatherComponent from './_components/weather.component';
 
 export const metadata: Metadata = {
   title: 'Home'
@@ -19,10 +20,8 @@ export default async function HomePage() {
       <div className='ml-16 relative'>
         <header className='bg-slate-50 lg:fixed lg:inset-0 lg:w-112 lg:left-16 xl:w-120 bg-gradient-to-b from-cyan-50 via-white to-sky-50 lg:shadow relative h-full overflow-y-auto lg:items-start flex flex-col'>
           <div className='z-10 relative'>
-            <MainHeaderComponent />
-
-            {/* Temperature */}
-            <TemperatureComponent />
+            {/* Main Weather Component */}
+            <WeatherComponent />
 
             {/* Sunset/Sunrise */}
             <div className='mt-4 grid grid-cols-2 justify-between p-8'>
@@ -43,7 +42,6 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
-
             {/* Wind */}
             <div className='flex items-center justify-between p-8'>
               <div className='grid grid-cols-4 gap-6'>

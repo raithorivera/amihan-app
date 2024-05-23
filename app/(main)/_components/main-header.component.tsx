@@ -1,46 +1,20 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Input, Button } from '@ui';
-
-import { DEFAULT_CITY } from '@/constant/main';
 
 import { formatDate } from '@/util/date.util';
 import { getWeatherIcon } from '@/util/image.util';
 import { getTemperatureSymbol } from '@/util/temperature.util';
 
-import { useWeather } from '../_hooks/use-weather.hook';
+interface MainHeaderComponentProps {
+  weatherData: any;
+  unit: string;
+}
 
-export default function MainHeaderComponent() {
-  const searchParams = useSearchParams();
-  const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
-
-  const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
-  const [city, setCity] = useState(DEFAULT_CITY);
-
-  const unit = params?.unit || '';
+export default function MainHeaderComponent({ weatherData, unit }: MainHeaderComponentProps) {
   const dateToday = new Date()?.toString();
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setLocation({ lat: latitude, lon: longitude });
-        },
-        () => {
-          setCity(DEFAULT_CITY);
-        }
-      );
-    } else {
-      setCity(DEFAULT_CITY);
-    }
-  }, []);
-
-  const weatherQueryData = useWeather(location ? { lat: location.lat, lon: location.lon, ...params } : { city, ...params });
-  const weatherData: any = weatherQueryData?.data ? weatherQueryData?.data : {};
 
   return (
     <div className='mt-10 px-8 py-4'>

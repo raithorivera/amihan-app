@@ -1,25 +1,14 @@
 'use client';
 
-import { useMemo } from 'react';
-import { useSearchParams } from 'next/navigation';
-
-import { DEFAULT_CITY } from '@/constant/main';
-
 import { getTemperatureSymbol } from '@/util/temperature.util';
 import { formatNumber } from '@/util/number.util';
 
-import { useWeatherCachedData } from '../_hooks/use-weather.hook';
+interface TemperatureComponentProps {
+  weatherData: any;
+  unit: string;
+}
 
-export default function TemperatureComponent() {
-  const searchParams = useSearchParams();
-  const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
-
-  const unit = params?.unit || '';
-  const city = params?.city || DEFAULT_CITY;
-
-  const weatherQueryData = useWeatherCachedData({ city, ...params });
-  const weatherData: any = weatherQueryData?.data ? weatherQueryData?.data : {};
-
+export default function TemperatureComponent({ weatherData, unit }: TemperatureComponentProps) {
   return (
     <div className='mt-2 relative grid grid-cols-3 gap-x-4 gap-y-8 py-8 pl-8 pr-4 bg-gradient-to-l from-lime-50 to-sky-50 drop-shadow-sm'>
       <div className='flex flex-col justify-between gap-2'>
