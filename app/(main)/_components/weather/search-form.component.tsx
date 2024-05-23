@@ -56,7 +56,7 @@ export default function SearchFormComponent() {
             render={({ field, fieldState }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder='Search city name' className='py-6 pl-4 pr-[90px] capitalize' {...field} disabled={searchMutation?.isPending} />
+                  <Input placeholder='Search city name...' className='py-6 pl-4 pr-[90px] capitalize' {...field} disabled={searchMutation?.isPending} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

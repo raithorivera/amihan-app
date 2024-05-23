@@ -1,13 +1,23 @@
 'use client';
 
+import React, { useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { Button } from '@ui';
+
+import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@ui';
 import { toast } from 'sonner';
+
+import { DEFAULT_UNIT } from '@/constant/main';
 
 import { Icon } from '@/components/icon.component';
 
 export default function SideNavComponent() {
-  const onChangeUnit = () => {}
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const params = Object.fromEntries(searchParams);
+
+  const [measurementUnit, setMeasurementUnit] = useState(params?.unit || DEFAULT_UNIT);
 
   const onChangeTheme = () => {
     toast.warning('Change Theme!', { description: 'This feature is currently being developed and will be available in an upcoming release. Stay tuned for updates!' });
@@ -15,6 +25,14 @@ export default function SideNavComponent() {
 
   const onChangeLanguage = () => {
     toast.warning('Change Language!', { description: 'This feature is currently being developed and will be available in an upcoming release. Stay tuned for updates!' });
+  };
+
+  const handleMeasurementUnitChange = (unit: string) => {
+    setMeasurementUnit(unit);
+    const newParams = new URLSearchParams(searchParams?.toString());
+    newParams.set('unit', unit);
+    const newUrl = `${pathname}?${newParams.toString()}`;
+    router.push(newUrl, { scroll: false });
   };
 
   return (
@@ -31,9 +49,22 @@ export default function SideNavComponent() {
       </span>
 
       <div className='flex gap-4 mt-auto'>
-        <Button variant='outline' size='icon' onClick={onChangeUnit}>
-          <Icon.cog className='h-4 w-4' />
-        </Button>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant='outline' size='icon'>
+              <Icon.cog className='h-4 w-4' />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className='w-56' side='right'>
+            <DropdownMenuLabel>Units of Measurement</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuRadioGroup value={measurementUnit} onValueChange={handleMeasurementUnitChange}>
+              <DropdownMenuRadioItem value='standard'>Standard</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value='metric'>Metric</DropdownMenuRadioItem>
+              <DropdownMenuRadioItem value='imperial'>Imperial</DropdownMenuRadioItem>
+            </DropdownMenuRadioGroup>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <Button variant='outline' size='icon' onClick={onChangeTheme}>
           <Icon.palette className='h-4 w-4' />

@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useQueryClient } from '@tanstack/react-query';
 
-import { DEFAULT_CITY } from '@/constant/main';
+import { DEFAULT_CITY, DEFAULT_UNIT } from '@/constant/main';
 
 export function useWeatherParams() {
   const queryClient = useQueryClient();
@@ -14,8 +14,7 @@ export function useWeatherParams() {
 
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [city, setCity] = useState(params?.city || DEFAULT_CITY);
-
-  const unit = params?.unit || '';
+  const [unit, setUnit] = useState(params?.unit || DEFAULT_UNIT);
 
   // On mounted
   useEffect(() => {
@@ -41,6 +40,13 @@ export function useWeatherParams() {
     queryClient.invalidateQueries({ queryKey: ['forecast'] });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.city]);
+
+  useEffect(() => {
+    setUnit(params?.unit);
+    queryClient.invalidateQueries({ queryKey: ['weather'] });
+    queryClient.invalidateQueries({ queryKey: ['forecast'] });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [params.unit]);
 
   return {
     params,
