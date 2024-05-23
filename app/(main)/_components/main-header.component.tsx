@@ -5,6 +5,8 @@ import { useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Input, Button } from '@ui';
 
+import { DEFAULT_CITY } from '@/constant/main';
+
 import { formatDate } from '@/util/date.util';
 import { getWeatherIcon } from '@/util/image.util';
 import { getTemperatureSymbol } from '@/util/temparature.util';
@@ -16,11 +18,11 @@ export default function MainHeaderComponent() {
   const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
 
   const unit = params?.unit || '';
+  const city = params?.city || DEFAULT_CITY;
   const dateToday = new Date()?.toString();
 
-  const weatherCityQueryData = useWeatherCity('London', params);
+  const weatherCityQueryData = useWeatherCity(city, params);
   const weatherData = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
-  console.log('weatherData', weatherData);
 
   return (
     <div className='mt-10 px-8 py-4'>
