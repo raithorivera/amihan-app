@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-import MainHeaderComponent from './main-header.component';
-import TemperatureComponent from './temperature.component';
-import TwilightComponent from './twilight.component';
-import WindComponent from './wind.component';
+import HeaderComponent from './weather/header.component';
+import TemperatureComponent from './weather/temperature.component';
+import TwilightComponent from './weather/twilight.component';
+import WindComponent from './weather/wind.component';
 
 import { DEFAULT_CITY } from '@/constant/main';
 
@@ -26,7 +26,6 @@ export default function WeatherComponent({ children }: WeatherComponentProps) {
   const [city, setCity] = useState(DEFAULT_CITY);
 
   const unit = params?.unit || '';
-  const dateToday = new Date()?.toString();
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -49,7 +48,7 @@ export default function WeatherComponent({ children }: WeatherComponentProps) {
 
   return (
     <React.Fragment>
-      <MainHeaderComponent weatherData={weatherData} unit={unit} />
+      <HeaderComponent weatherData={weatherData} unit={unit} />
       <TemperatureComponent weatherData={weatherData} unit={unit} />
       <TwilightComponent weatherData={weatherData} />
       <WindComponent weatherData={weatherData} unit={unit} />

@@ -9,12 +9,12 @@ import { getTemperatureSymbol } from '@/util/symbol.util';
 
 import type { TWeatherData } from '@/types/index';
 
-interface MainHeaderComponentProps {
+interface HeaderComponentProps {
   weatherData: TWeatherData;
   unit: string;
 }
 
-export default function MainHeaderComponent({ weatherData, unit }: MainHeaderComponentProps) {
+export default function HeaderComponent({ weatherData, unit }: HeaderComponentProps) {
   const dateToday = new Date()?.toString();
 
   return (
