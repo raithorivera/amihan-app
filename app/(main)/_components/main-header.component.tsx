@@ -3,22 +3,28 @@
 import Image from 'next/image';
 import { Input, Button } from '@ui';
 
+import { formatDate } from '@/util/date.util';
+
 import { useWeatherCity } from '../_hooks/use-weather-city.hook';
 
 export default function MainHeaderComponent() {
-  const weatherCityData = useWeatherCity();
-  // console.log('weatherCityData', weatherCityData);
+  const dateToday = new Date()?.toString();
+  const weatherCityQueryData = useWeatherCity('London');
+  const weatherData = weatherCityQueryData?.data ? weatherCityQueryData?.data : {};
+  console.log('weatherData', weatherData);
 
   return (
     <div className='mt-10 px-8 py-4'>
       <div className='flex items-center justify-between px-3'>
         <div className=''>
-          <h2 className='text-lg leading-tight'>Today, 22 May 2024</h2>
-          <h1 className='text-4xl font-bold leading-tight tracking-tighter'>Manila, PH</h1>
-          <p className='text-sm'>14.6042, 120.9822</p>
+          <h2 className='text-lg leading-tight'>
+            <strong className='font-medium'>Today</strong>, {formatDate(dateToday)}
+          </h2>
+          <h1 className='text-4xl font-bold leading-tight tracking-tighter'>{`${weatherData?.name || ''}, ${weatherData?.sys?.country || ''}`}</h1>
+          <p className='text-sm'>{`${weatherData?.coord?.lat || ''}, ${weatherData?.coord?.lon || ''}`}</p>
         </div>
 
-        <Image src='https://openweathermap.org/img/wn/10d@4x.png' width={100} height={100} alt='Weather Icon' className='' />
+        <Image src={`https://openweathermap.org/img/wn/${weatherData?.weather?.[0]?.icon}@4x.png`} width={100} height={100} alt='Weather Icon' className='' />
       </div>
 
       <div className='px-3 mt-6 relative'>
