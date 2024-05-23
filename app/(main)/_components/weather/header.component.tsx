@@ -1,13 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { Input, Button } from '@ui';
 
 import { formatDate } from '@/util/date.util';
 import { getWeatherBanner, getWeatherIcon } from '@/util/image.util';
 import { getTemperatureSymbol } from '@/util/symbol.util';
 
 import type { TWeatherData } from '@/types/index';
+
+import SearchFormComponent from './search-form.component';
 
 interface HeaderComponentProps {
   weatherData: TWeatherData;
@@ -31,12 +32,7 @@ export default function HeaderComponent({ weatherData, unit }: HeaderComponentPr
         <Image src={getWeatherIcon(weatherData?.weather?.[0]?.icon)} width={100} height={100} alt='Weather Icon' className='drop-shadow-md' />
       </div>
 
-      <div className='px-3 mt-6 relative'>
-        <Input placeholder='Search' className='py-6 pl-4 pr-[90px]' />
-        <Button size='sm' className='absolute top-[10px] right-[24px]'>
-          Search
-        </Button>
-      </div>
+      <SearchFormComponent />
 
       <div className='mt-6 relative'>
         <Image src={getWeatherBanner(weatherData?.weather?.[0]?.description, weatherData?.weather?.[0]?.icon)} width={1540} height={160} alt='Weather Image' className='shadow-lg rounded-[46px] lg:rounded-[20px]' />

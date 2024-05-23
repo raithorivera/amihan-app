@@ -14,6 +14,7 @@ export function useWeatherParams() {
 
   const unit = params?.unit || '';
 
+  // On mounted
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -28,7 +29,8 @@ export function useWeatherParams() {
     } else {
       setCity(params?.city || DEFAULT_CITY);
     }
-  }, [params?.city]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return {
     params,
