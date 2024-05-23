@@ -7,6 +7,8 @@ import { toast } from 'sonner';
 import { Icon } from '@/components/icon.component';
 
 export default function SideNavComponent() {
+  const onChangeUnit = () => {}
+
   const onChangeTheme = () => {
     toast.warning('Change Theme!', { description: 'This feature is currently being developed and will be available in an upcoming release. Stay tuned for updates!' });
   };
@@ -29,7 +31,7 @@ export default function SideNavComponent() {
       </span>
 
       <div className='flex gap-4 mt-auto'>
-        <Button variant='outline' size='icon'>
+        <Button variant='outline' size='icon' onClick={onChangeUnit}>
           <Icon.cog className='h-4 w-4' />
         </Button>
 
