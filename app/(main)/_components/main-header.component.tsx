@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
 import { Input, Button } from '@ui';
 
 import { formatDate } from '@/util/date.util';

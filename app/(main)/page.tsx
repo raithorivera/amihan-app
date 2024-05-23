@@ -24,24 +24,7 @@ export default async function HomePage() {
             <WeatherComponent />
 
             {/* Sunset/Sunrise */}
-            <div className='mt-4 grid grid-cols-2 justify-between p-8'>
-              <div className='flex items-center gap-6'>
-                <Image src='/images/icon_svg/sunrise.svg' width={65} height={65} alt='Sunrise Image' className='' />
-                <div className='grid gap-1'>
-                  <p className='text-sm'>Sunrise</p>
-                  <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>6:00 PM</h3>
-                </div>
-              </div>
 
-              <div className='flex items-center gap-6'>
-                <Image src='/images/icon_svg/sunset.svg' width={65} height={65} alt='Sunset Image' className='' />
-
-                <div className='grid gap-1'>
-                  <p className='text-sm'>Sunset</p>
-                  <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>6:00 AM</h3>
-                </div>
-              </div>
-            </div>
             {/* Wind */}
             <div className='flex items-center justify-between p-8'>
               <div className='grid grid-cols-4 gap-6'>

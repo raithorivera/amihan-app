@@ -9,6 +9,7 @@ import TemperatureComponent from './temperature.component';
 import { DEFAULT_CITY } from '@/constant/main';
 
 import { useWeather } from '../_hooks/use-weather.hook';
+import TwilightComponent from './twilight.component';
 
 interface WeatherComponentProps {
   children?: React.ReactNode;
@@ -47,6 +48,7 @@ export default function WeatherComponent({ children }: WeatherComponentProps) {
     <React.Fragment>
       <MainHeaderComponent weatherData={weatherData} unit={unit} />
       <TemperatureComponent weatherData={weatherData} unit={unit} />
+      <TwilightComponent weatherData={weatherData} />
     </React.Fragment>
   );
 }
