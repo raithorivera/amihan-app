@@ -1,10 +1,12 @@
 'use client';
 
-import { getTemperatureSymbol } from '@/util/temperature.util';
+import { getTemperatureSymbol, getHumiditySymbol, getPressureSymbol, getVisibilitySymbol } from '@/util/symbol.util';
 import { formatNumber } from '@/util/number.util';
 
+import type { TWeatherData } from '@/types/index';
+
 interface TemperatureComponentProps {
-  weatherData: any;
+  weatherData: TWeatherData;
   unit: string;
 }
 
@@ -34,15 +36,24 @@ export default function TemperatureComponent({ weatherData, unit }: TemperatureC
       </div>
       <div className='flex flex-col justify-between gap-2'>
         <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Humidity</p>
-        <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>{formatNumber(weatherData?.main?.humidity)}</h3>
+        <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
+          {formatNumber(weatherData?.main?.humidity)}
+          {getHumiditySymbol()}
+        </h3>
       </div>
       <div className='flex flex-col justify-between gap-2'>
         <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Pressure</p>
-        <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>{formatNumber(weatherData?.main?.pressure)}</h3>
+        <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
+          {formatNumber(weatherData?.main?.pressure)}
+          {getPressureSymbol()}
+        </h3>
       </div>
       <div className='flex flex-col justify-between gap-2'>
         <p className='text-sm font-medium text-slate-700 border-l-2 border-sky-500 pl-2'>Visibility</p>
-        <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>{formatNumber(weatherData?.visibility)}</h3>
+        <h3 className='bottom-4 left-6 text-2xl text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
+          {formatNumber(weatherData?.visibility)}
+          {getVisibilitySymbol()}
+        </h3>
       </div>
     </div>
   );

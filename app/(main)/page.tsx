@@ -22,30 +22,6 @@ export default async function HomePage() {
           <div className='z-10 relative'>
             {/* Main Weather Component */}
             <WeatherComponent />
-
-            {/* Sunset/Sunrise */}
-
-            {/* Wind */}
-            <div className='flex items-center justify-between p-8'>
-              <div className='grid grid-cols-4 gap-6'>
-                <Image src='/images/icon_svg/cloud-gust.svg' width={65} height={65} alt='Sunrise Image' className='' />
-
-                <div className='grid gap-1'>
-                  <p className='text-sm'>Wind Speed</p>
-                  <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>1.79</h3>
-                </div>
-
-                <div className='grid gap-1'>
-                  <p className='text-sm'>Direction</p>
-                  <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>356&deg;</h3>
-                </div>
-
-                <div className='grid gap-1'>
-                  <p className='text-sm'>Wind Gust</p>
-                  <h3 className='text-xl font-semibold leading-none tracking-tighter select-none'>8.94</h3>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className='w-full mt-auto hidden lg:flex'>

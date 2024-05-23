@@ -4,8 +4,10 @@ import Image from 'next/image';
 
 import { formatTime } from '@/util/date.util';
 
+import type { TWeatherData } from '@/types/index';
+
 interface TwilightComponentProps {
-  weatherData: any;
+  weatherData: TWeatherData;
 }
 
 export default function TwilightComponent({ weatherData }: TwilightComponentProps) {

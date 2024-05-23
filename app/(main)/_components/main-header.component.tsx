@@ -5,10 +5,12 @@ import { Input, Button } from '@ui';
 
 import { formatDate } from '@/util/date.util';
 import { getWeatherIcon } from '@/util/image.util';
-import { getTemperatureSymbol } from '@/util/temperature.util';
+import { getTemperatureSymbol } from '@/util/symbol.util';
+
+import type { TWeatherData } from '@/types/index';
 
 interface MainHeaderComponentProps {
-  weatherData: any;
+  weatherData: TWeatherData;
   unit: string;
 }
 

@@ -5,11 +5,14 @@ import { useSearchParams } from 'next/navigation';
 
 import MainHeaderComponent from './main-header.component';
 import TemperatureComponent from './temperature.component';
+import TwilightComponent from './twilight.component';
+import WindComponent from './wind.component';
 
 import { DEFAULT_CITY } from '@/constant/main';
 
+import type { TWeatherData } from '@/types/index';
+
 import { useWeather } from '../_hooks/use-weather.hook';
-import TwilightComponent from './twilight.component';
 
 interface WeatherComponentProps {
   children?: React.ReactNode;
@@ -42,13 +45,14 @@ export default function WeatherComponent({ children }: WeatherComponentProps) {
   }, []);
 
   const weatherQueryData = useWeather(location ? { lat: location.lat, lon: location.lon, ...params } : { city, ...params });
-  const weatherData: any = weatherQueryData?.data ? weatherQueryData?.data : {};
+  const weatherData: TWeatherData = weatherQueryData?.data ? weatherQueryData?.data : {};
 
   return (
     <React.Fragment>
       <MainHeaderComponent weatherData={weatherData} unit={unit} />
       <TemperatureComponent weatherData={weatherData} unit={unit} />
       <TwilightComponent weatherData={weatherData} />
+      <WindComponent weatherData={weatherData} unit={unit} />
     </React.Fragment>
   );
 }
