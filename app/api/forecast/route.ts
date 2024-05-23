@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     params.units = unit;
 
     const data = await fetchData('forecast', params);
-    return NextResponse.json(data);
+    return NextResponse.json({ statusCode: 200, ...data });
   } catch (error: any) {
     return NextResponse.json({ statusCode: 400, message: error.message || 'Invalid request!' });
   }
