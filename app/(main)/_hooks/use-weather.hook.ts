@@ -13,7 +13,7 @@ const fetchData = async (params: Record<string, any>) => {
     const returnData = responseData?.data ? responseData?.data : {};
     return returnData;
   } catch (err) {
-    console.log('err', err);
+    console.log('error in fetchingData: ', err);
   }
 };
 
@@ -26,7 +26,7 @@ export function useWeather(params: Record<string, any>) {
     queryFn: () => fetchData(params),
     staleTime: TIME_10_MINUTES,
     gcTime: TIME_10_MINUTES,
-    enabled: params?.city && params?.city !== '' ? true : false
+    enabled: (params?.city && params?.city !== '') || (params?.lat && params?.lon) ? true : false
   });
 
   return queryData;

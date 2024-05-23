@@ -5,6 +5,8 @@ import { fetchData } from '@/util/fetch.util';
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
 
+  console.log('url', url.searchParams)
+
   const city = url.searchParams.get('city');
   const lat = url.searchParams.get('lat');
   const lon = url.searchParams.get('lon');

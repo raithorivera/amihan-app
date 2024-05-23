@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Input, Button } from '@ui';
 
@@ -17,11 +17,29 @@ export default function MainHeaderComponent() {
   const searchParams = useSearchParams();
   const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
 
+  const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
+  const [city, setCity] = useState(DEFAULT_CITY);
+
   const unit = params?.unit || '';
-  const city = params?.city || DEFAULT_CITY;
   const dateToday = new Date()?.toString();
 
-  const weatherQueryData = useWeather({ city, ...params });
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setLocation({ lat: latitude, lon: longitude });
+        },
+        () => {
+          setCity(DEFAULT_CITY);
+        }
+      );
+    } else {
+      setCity(DEFAULT_CITY);
+    }
+  }, []);
+
+  const weatherQueryData = useWeather(location ? { lat: location.lat, lon: location.lon, ...params } : { city, ...params });
   const weatherData: any = weatherQueryData?.data ? weatherQueryData?.data : {};
 
   return (
