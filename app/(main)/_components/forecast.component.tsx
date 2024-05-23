@@ -24,8 +24,6 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
   const forecastData: TForecastData = forecastQueryData?.data ? forecastQueryData?.data : {};
   const forecastList: TWeatherData[] = forecastData?.list ? forecastData?.list : [];
 
-  console.log('forecastList', forecastList);
-
   return (
     <div className='relative xl:p-20 lg:p-10 p-4 pb-10 xl:max-w-[1440px]'>
       <div>
@@ -37,20 +35,20 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
           const dateTime = (item?.dt > 0 ? parseInt(item?.dt) * 1000 : '') as string;
 
           return (
-            <div key={'fci_' + item.dt} className='p-4 bg-slate-50  shadow-sm rounded-md odd:bg-gradient-to-l odd:from-lime-50 odd:to-sky-50 even:bg-gradient-to-r even:from-cyan-50 even:to-slate-50'>
+            <div key={'fci_' + item.dt} className='p-4 bg-slate-50 shadow-sm rounded-md odd:bg-gradient-to-r odd:from-lime-50 odd:to-blue-50 even:bg-gradient-to-r even:from-cyan-50 even:to-lime-50 xl:p-8'>
               <div className='flex items-center justify-between'>
                 <div className='leading-tight tracking-tighter'>
                   <h4 className='font-light text-sm'>{formatDate(dateTime)}</h4>
                   <h3 className='font-bold text-lg'>{formatForecastTime(dateTime)}</h3>
                 </div>
 
-                <Image src={getWeatherIcon(item?.weather?.[0]?.icon)} width={40} height={40} alt='Weather Icon' />
+                <Image src={getWeatherIcon(item?.weather?.[0]?.icon)} width={60} height={60} alt='Weather Icon' className='drop-shadow-md' />
               </div>
 
-              <div className='mt-2 relative'>
+              <div className='mt-2 relative xl:mt-4'>
                 <Image src={getWeatherBanner(item?.weather?.[0]?.description, item?.weather?.[0]?.icon)} width={540} height={160} alt='Weather Image' />
 
-                <div className='absolute bottom-2 left-4'>
+                <div className='absolute bottom-3 left-4'>
                   <h2 className='text-xl text-white font-light leading-none tracking-tighter select-none'>
                     {item?.main?.temp}
                     <sup className='text-sm -top-2 left-1'>{getTemperatureSymbol(unit)}</sup>
@@ -61,7 +59,7 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
               </div>
 
               {/* Temperature */}
-              <div className='mt-3 relative grid grid-cols-2 gap-x-2 gap-y-2 text-center'>
+              <div className='mt-3 relative grid grid-cols-2 gap-x-2 gap-y-2 text-center xl:mt-6'>
                 <div className='flex flex-col justify-between gap-2'>
                   <p className='text-sm font-light'>Minimum</p>
                   <h3 className='bottom-4 left-6 text-lg text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>

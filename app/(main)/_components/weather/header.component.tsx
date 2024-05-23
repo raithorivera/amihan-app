@@ -28,7 +28,7 @@ export default function HeaderComponent({ weatherData, unit }: HeaderComponentPr
           <p className='text-sm'>{`${weatherData?.coord?.lat || ''}, ${weatherData?.coord?.lon || ''}`}</p>
         </div>
 
-        <Image src={getWeatherIcon(weatherData?.weather?.[0]?.icon)} width={100} height={100} alt='Weather Icon' className='' />
+        <Image src={getWeatherIcon(weatherData?.weather?.[0]?.icon)} width={100} height={100} alt='Weather Icon' className='drop-shadow-md' />
       </div>
 
       <div className='px-3 mt-6 relative'>

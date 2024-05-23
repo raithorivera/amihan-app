@@ -17,7 +17,7 @@ export default function TwilightComponent({ weatherData }: TwilightComponentProp
   return (
     <div className='mt-4 grid grid-cols-2 justify-between p-8'>
       <div className='flex items-center gap-6'>
-        <Image src='/images/icon_svg/sunrise.svg' width={65} height={65} alt='Sunrise Image' className='' />
+        <Image src='/images/icon_svg/sunrise.svg' width={65} height={65} alt='Sunrise Image' className='drop-shadow' />
         <div className='grid gap-1'>
           <p className='text-sm'>Sunrise</p>
           <h3 className='text-xl font-semibold leading-none tracking-tighter select-none uppercase'>{formatTime(sunrise)}</h3>
@@ -25,7 +25,7 @@ export default function TwilightComponent({ weatherData }: TwilightComponentProp
       </div>
 
       <div className='flex items-center gap-6'>
-        <Image src='/images/icon_svg/sunset.svg' width={65} height={65} alt='Sunset Image' className='' />
+        <Image src='/images/icon_svg/sunset.svg' width={65} height={65} alt='Sunset Image' className='drop-shadow' />
 
         <div className='grid gap-1'>
           <p className='text-sm'>Sunset</p>
