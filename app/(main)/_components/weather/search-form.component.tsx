@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { toast } from 'sonner';
@@ -17,12 +18,14 @@ const FormSchema = z.object({
 export default function SearchFormComponent() {
   const router = useRouter();
   const pathname = usePathname();
+
   const searchParams = useSearchParams();
+  const params = useMemo(() => Object.fromEntries(searchParams), [searchParams]);
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      search: ''
+      search: params?.city ? params.city : ''
     }
   });
 
