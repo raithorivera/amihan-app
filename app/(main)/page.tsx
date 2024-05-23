@@ -134,16 +134,16 @@ export default function HomePage() {
           </div>
         </header>
 
-        <main className='lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120 mt-2'>
+        <main className='lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120 mt-2 bg-gradient-to-l from-gray-50 via-100%'>
           <Waveform className='absolute left-0 top-0 h-20 w-full' />
 
-          <div className='relative lg:p-20 p-4'>
+          <div className='relative xl:p-20 lg:p-10 p-4 pb-10 xl:max-w-[1440px]'>
             <div>
               <h1 className='text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50 pb-4'>Weather Forecast</h1>
             </div>
 
-            <div className='grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 gap-6 mt-6'>
-              {[1, 2, 3, 4, 5, 6].map((item, index) => (
+            <div className='grid grid-cols-1 2xl:grid-cols-3 md:grid-cols-2 gap-6 mt-6'>
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item, index) => (
                 <div key={index} className='p-4 bg-slate-50 bg-gradient-to-l from-lime-50 to-sky-50 shadow-sm rounded-md'>
                   <div className='flex items-center justify-between'>
                     <div className='leading-tight tracking-tighter'>
@@ -166,7 +166,8 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className='mt-3 ml-2 relative grid grid-cols-2 gap-x-2 gap-y-2'>
+                  {/* Temperature */}
+                  <div className='mt-3 relative grid grid-cols-2 gap-x-2 gap-y-2 text-center'>
                     <div className='flex flex-col justify-between gap-2'>
                       <p className='text-sm font-light'>Minimum</p>
                       <h3 className='bottom-4 left-6 text-lg text-gray-900 font-semibold leading-tight tracking-tighter select-none pl-2'>
