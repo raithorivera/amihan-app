@@ -35,8 +35,12 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
         <EmptyComponent title='No weather forecast to display!' />
       ) : (
         <React.Fragment>
-          <div>
-            <h1 className='text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50 pb-4'>Weather Forecast</h1>
+          <div className='mb-6'>
+            <h1 className='text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50'>Weather Forecast</h1>
+            <p className='mt-2 text-sm text-gray-600 max-w-[80%]'>
+              Stay updated with the latest weather forecast for your area. Get detailed information about temperature trends, to plan your day better. Our forecast provides regular updates,
+              ensuring you are well-prepared for any weather changes.
+            </p>
           </div>
 
           <ChartsComponent forecastList={forecastList} />
