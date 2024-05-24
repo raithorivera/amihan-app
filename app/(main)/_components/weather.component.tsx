@@ -38,6 +38,7 @@ export default function WeatherComponent({ children }: WeatherComponentProps) {
       <TemperatureComponent weatherData={weatherData} unit={weatherParams?.unit} />
       <TwilightComponent weatherData={weatherData} />
       <WindComponent weatherData={weatherData} unit={weatherParams?.unit} />
+
     </React.Fragment>
   );
 }
