@@ -47,7 +47,7 @@ export default function SearchFormComponent() {
   };
 
   return (
-    <div className='px-3 mt-6 relative'>
+    <div className='mt-0 md:mt-6 px-3 relative'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField

@@ -36,8 +36,8 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
       ) : (
         <React.Fragment>
           <div className='mb-6'>
-            <h1 className='text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50'>Weather Forecast</h1>
-            <p className='mt-2 text-sm text-gray-600 max-w-[80%]'>
+            <h1 className='text-base md:text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50'>Weather Forecast</h1>
+            <p className='mt-2 text-xs md:text-sm text-gray-600 md:max-w-[80%]'>
               Stay updated with the latest weather forecast for your area. Get detailed information about temperature trends, to plan your day better. Our forecast provides regular updates,
               ensuring you are well-prepared for any weather changes.
             </p>
