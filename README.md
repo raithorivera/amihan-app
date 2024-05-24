@@ -18,7 +18,7 @@ This is an example frontend for the Amihan application, powered by Next.js.
 
 ##### Desktop View
 
-![Desktop Homepage Screenshot](public/images/demo/desktop-homepage.png "Desktop Homepage of Amihan App")
+![Desktop Homepage Screenshot](public/images/demo/desktop-homepage.png 'Desktop Homepage of Amihan App')
 
 ##### Mobile View
 
@@ -35,6 +35,7 @@ This is an example frontend for the Amihan application, powered by Next.js.
 **Amihan App - Your Weather Companion**
 
 **Core Features:**
+
 - 🌦 **Current Weather Conditions**: Get up-to-date weather information including temperature, sunrise, sunset, wind data, pressure, humidity, and visibility for a selected city, using [OpenWeatherMap](https://openweathermap.org/) API.
 - 🏙 **Default City**: By default, the app displays weather data for London.
 - 🌐 **GeoLocation Support**: If navigator geolocation is enabled, the app automatically uses your lat/lon coordinates to fetch the current weather information.
@@ -50,10 +51,12 @@ This is an example frontend for the Amihan application, powered by Next.js.
 - 🌡 **Unit Conversion**: Ability to switch the unit of measurement between standard, metric, or imperial.
 
 **Upcoming Features:**
+
 - 🌐 **Multi-language Support**: Plans to accommodate multiple languages to enhance user accessibility.
 - 🎨 **Theme Customization**: Future updates will include options to toggle between light and dark themes and choose color themes.
 
 **Technical Highlights:**
+
 - 🖥 **Next.js**: Utilizes Next.js for robust, scalable server-side rendering.
 - 🎨 **Tailwind CSS**: Integrated for stylish, responsive design.
 - ✅ **TypeScript & Strict Mode**: Ensures reliable code standards and enhances developer experience.
@@ -117,6 +120,7 @@ Deploying the application involves several key steps, ensuring that it is built,
 
 1. **Build the Application**:
    Compile the production build of your application by running:
+
    ```sh
    npm run build
    ```
@@ -138,6 +142,7 @@ Deploying the application involves several key steps, ensuring that it is built,
 Once all configurations are in place, ensure to restart the services to apply all changes:
 
 - **Restart Supervisor**:
+
   ```sh
   sudo supervisorctl restart amihan
   ```
@@ -184,6 +189,7 @@ Below is an outline of the key directories and files in the Amihan project:
 ├── package.json             # NPM package configuration
 └── tsconfig.json            # TypeScript configuration
 ```
+
 ---
 
 ### Technology Stack
@@ -229,6 +235,31 @@ Everyone is welcome to contribute to this project. Feel free to open an issue if
 Licensed under the MIT License, Copyright © 2024
 
 See [LICENSE](LICENSE) for more information.
+
+---
+
+#### Attributions
+
+This project uses various resources that require acknowledgment:
+
+##### Illustrations
+
+- The illustrations were provided by [unDraw](https://undraw.co/illustrations). unDraw offers a large collection of open-source illustrations.
+
+##### Weather Icons
+
+- Weather icons used in this application are from [OpenWeatherMap](https://openweathermap.org/), which provides visual representations of weather conditions.
+- Additional weather icons from [Vecteezy Weather Icons Pack](https://www.vecteezy.com/vector-art/465658-weather-icons-pack), enhancing our application's visual design.
+
+##### Vector Graphics
+
+- Moon Landscape vectors provided by [Vecteezy](https://www.vecteezy.com/free-vector/moon-landscape). These vectors enhance the aesthetic of our application.
+- Weather widget design and UI icons sourced from [Vecteezy's Weather Widget Design](https://www.vecteezy.com/vector-art/8873897-weather-widget-design-ui-user-interface-icon-template), used for creating intuitive user interfaces.
+
+
+##### Typography
+
+- The logo of Amihan uses the "Rasyideen" font, which is sourced from [DaFont](https://www.dafont.com/rasyideen.font?text=amihan). This font was chosen for its aesthetic and readability.
 
 ---
 
