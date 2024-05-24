@@ -1,0 +1,57 @@
+upstream amihan_app {
+    ip_hash;
+    server 127.0.0.1:5000;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name amihan.codebracket.xyz;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name amihan.codebracket.xyz;
+
+    ssl_certificate /etc/letsencrypt/live/amihan.codebracket.xyz/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/amihan.codebracket.xyz/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    root /projects/amihan-app;
+    index index.html index.htm;
+
+    client_max_body_size 10M;
+
+    location / {
+        proxy_pass http://amihan_app;
+        proxy_redirect off;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host ;
+        proxy_set_header X-Real-IP $remote_addr ;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        client_max_body_size 10M;
+        proxy_connect_timeout 6000;
+        proxy_send_timeout 6000;
+        proxy_read_timeout 6000;
+        send_timeout 6000;
+    }
+}
+
+server {
+    if ($host = amihan.codebracket.xyz) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    listen [::]:80;
+
+    server_name amihan.codebracket.xyz;
+    return 404; # managed by Certbot
+}

@@ -59,8 +59,6 @@ npm run dev
 
 The app should now be up and running at [http://localhost:3000](http://localhost:3000) 🚀
 
-Sure, I'll update the Deployment section to include the new steps and contexts you've outlined. Here’s the revised section:
-
 ---
 
 ### Deployment
@@ -77,10 +75,10 @@ Deploying the application involves several key steps, ensuring that it is built,
    Check the `start.sh` script to set up the environment and start the application. This script should ensure the correct Node.js and npm versions are used.
 
 3. **Configure Supervisor**:
-   Install and configure Supervisor to manage the application process, ensuring it stays running. You will need to create a Supervisor configuration file specific to your application.
+   Install and configure Supervisor to manage the application process, ensuring it stays running. You will need to create a Supervisor configuration file specific to your application. Check `/server/supervisor.txt` for sample configuration.
 
 4. **Configure Nginx**:
-   Use Nginx as a reverse proxy to handle requests and manage SSL. Ensure Nginx is installed and properly configured to route traffic to your application.
+   Use Nginx as a reverse proxy to handle requests and manage SSL. Ensure Nginx is installed and properly configured to route traffic to your application. Check `/server/nginx.txt` for sample configuration.
 
 5. **Set Up SSL with Certbot**:
    Secure your application with SSL certificates from Let's Encrypt using Certbot, it will automatically handle the SSL configuration for Nginx.
