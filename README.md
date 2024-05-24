@@ -14,6 +14,44 @@ Sure, I can help you create a similar README guide tailored for your application
 
 This is an example frontend for the Amihan application, powered by Next.js.
 
+![Homepage Screenshot](public/images/nature-no-moon.svg "Homepage of Amihan App")
+
+---
+
+#### Features
+
+**Amihan App - Your Weather Companion**
+
+**Core Features:**
+- 🌦 **Current Weather Conditions**: Get up-to-date weather information including temperature, sunrise, sunset, wind data, pressure, humidity, and visibility for a selected city, using [OpenWeatherMap](https://openweathermap.org/) API.
+- 🏙 **Default City**: By default, the app displays weather data for London.
+- 🌐 **GeoLocation Support**: If navigator geolocation is enabled, the app automatically uses your lat/lon coordinates to fetch the current weather information.
+- 🔍 **City Search**: Allows users to search for and select cities from the OpenWeatherMap database.
+- 🔄 **Dynamic Weather Updates**: Utilize `useQuery` to fetch and `useMutation` for sending or mutating data.
+- ⏳ **Loading & Error Handling**: Efficiently manages UI states for loading and errors to enhance user experience.
+- 📋 **Form Validation**: Implements `zod` and `react-hook-form` to manage and validate form inputs.
+- 📈 **Weather Forecast**: Display the weather forecast for the next few days with daily temperature highs and lows graphed for easy visualization.
+- 🌈 **Reactive Weather Banners**: Dynamic weather banners that change based on current weather conditions.
+- 🌞 **Weather Icons**: Utilizes OpenWeatherMap icons to visually represent weather conditions.
+- 📱 **Responsive Design**: A clean, modern design that adjusts beautifully from large screens to mobile devices.
+- 📊 **React Query Caching**: Implements caching strategies to optimize data fetching performance.
+- 🌡 **Unit Conversion**: Ability to switch the unit of measurement between standard, metric, or imperial.
+
+**Upcoming Features:**
+- 🌐 **Multi-language Support**: Plans to accommodate multiple languages to enhance user accessibility.
+- 🎨 **Theme Customization**: Future updates will include options to toggle between light and dark themes and choose color themes.
+
+**Technical Highlights:**
+- 🖥 **Next.js**: Utilizes Next.js for robust, scalable server-side rendering.
+- 🎨 **Tailwind CSS**: Integrated for stylish, responsive design.
+- ✅ **TypeScript & Strict Mode**: Ensures reliable code standards and enhances developer experience.
+- 🚀 **SEO Optimized**: Implements metadata, and Open Graph tags with Next SEO.
+- 🛠 **Developer Tools**: Configured with ESLint, Prettier, and lint-staged to maintain code quality.
+
+##### Explore Amihan
+
+Check out the live site at [amihan.codebracket.xyz](https://amihan.codebracket.xyz) to see these features in action. Discover how Amihan brings comprehensive weather data to your fingertips with ease and style.
+
 ---
 
 ### Prerequisites
@@ -171,6 +209,8 @@ Below is an outline of the key directories and files in the Amihan project:
 #### Contributions
 
 Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
+
+---
 
 #### License
 
