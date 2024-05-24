@@ -12,7 +12,7 @@ The Amihan winds are known for bringing cooler temperatures and pleasant weather
 
 ##### Demo 👉 [https://amihan.codebracket.xyz](https://amihan.codebracket.xyz)
 
-This is an example frontend for the Amihan application, powered by Next.js.
+The above demo link is for the frontend of Amihan application, powered by Next.js.
 
 ##### Desktop View
 
@@ -54,6 +54,7 @@ Experience the functionality of the Amihan App through our video demos. Click th
 - 📱 **Responsive Design**: A clean, modern design that adjusts beautifully from large screens to mobile devices.
 - 📊 **React Query Caching**: Implements caching strategies to optimize data fetching performance.
 - 🌡 **Unit Conversion**: Ability to switch the unit of measurement between standard, metric, or imperial.
+- 🌐 **State Management with URL Search Parameters**: This app leverage URL `searchParams` to manage and persist the state for units of measurement and selected city. This allows the state to remain consistent even after the browser is refreshed and enables users to share their current view simply by copying the URL. This feature is particularly useful for ensuring that users can return to their customized weather settings or share them with others without needing to reconfigure their preferences.
 
 **Upcoming Features:**
 
@@ -234,6 +235,7 @@ Below is an outline of the key directories and files in the Amihan project:
 - Implement UI, Unit, and e2e testing.
 - Add animations for weather transitions to enhance visual engagement.
 - Social Sharing Options: Enable users to share weather forecasts and conditions on social media directly from the app.
+- Change loading state to use skeleton instead of loading spinner.
 
 ---
 
