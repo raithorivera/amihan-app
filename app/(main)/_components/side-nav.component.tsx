@@ -65,13 +65,14 @@ export default function SideNavComponent() {
 
       <div className='flex gap-4 mt-auto'>
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <TooltipComponent content='Change units of measurement.'>
+          <TooltipComponent content='Change units of measurement.'>
+            <DropdownMenuTrigger asChild>
               <Button variant='outline' size='icon'>
                 <Icon.cog className='h-4 w-4' />
               </Button>
-            </TooltipComponent>
-          </DropdownMenuTrigger>
+            </DropdownMenuTrigger>
+          </TooltipComponent>
+
           <DropdownMenuContent className='w-56' side='right'>
             <DropdownMenuLabel>Units of Measurement</DropdownMenuLabel>
             <DropdownMenuSeparator />
