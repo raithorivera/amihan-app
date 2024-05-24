@@ -28,6 +28,13 @@ This is an example frontend for the Amihan application, powered by Next.js.
   <img src="public/images/demo/mobile-3.jpg" alt="Mobile View 3" title="Mobile Homepage View 3" style="width: 30%; margin: 10px;">
 </div>
 
+#### Video Demos
+
+Experience the functionality of the Amihan App through our video demos. Click the links below to download and view each demo:
+
+- **Desktop Demo**: [Download Desktop Demo](https://github.com/raithorivera/amihan-app/blob/main/public/videos/demo/desktop.mp4)
+- **Mobile Demo**: [Download Mobile Demo](https://github.com/raithorivera/amihan-app/blob/main/public/videos/demo/mobile.mp4)
+
 ---
 
 #### Features
@@ -224,20 +231,6 @@ Below is an outline of the key directories and files in the Amihan project:
 
 ---
 
-#### Contributions
-
-Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
-
----
-
-#### License
-
-Licensed under the MIT License, Copyright © 2024
-
-See [LICENSE](LICENSE) for more information.
-
----
-
 #### Attributions
 
 This project uses various resources that require acknowledgment:
@@ -256,10 +249,23 @@ This project uses various resources that require acknowledgment:
 - Moon Landscape vectors provided by [Vecteezy](https://www.vecteezy.com/free-vector/moon-landscape). These vectors enhance the aesthetic of our application.
 - Weather widget design and UI icons sourced from [Vecteezy's Weather Widget Design](https://www.vecteezy.com/vector-art/8873897-weather-widget-design-ui-user-interface-icon-template), used for creating intuitive user interfaces.
 
-
 ##### Typography
 
 - The logo of Amihan uses the "Rasyideen" font, which is sourced from [DaFont](https://www.dafont.com/rasyideen.font?text=amihan). This font was chosen for its aesthetic and readability.
+
+---
+
+#### Contributions
+
+Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
+
+---
+
+#### License
+
+Licensed under the MIT License, Copyright © 2024
+
+See [LICENSE](LICENSE) for more information.
 
 ---
 
