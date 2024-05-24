@@ -231,6 +231,14 @@ Below is an outline of the key directories and files in the Amihan project:
 
 ---
 
+#### Todo
+
+- Implement UI, Unit, and e2e testing.
+- Add animations for weather transitions to enhance visual engagement.
+- Social Sharing Options: Enable users to share weather forecasts and conditions on social media directly from the app.
+
+---
+
 #### Attributions
 
 This project uses various resources that require acknowledgment:
