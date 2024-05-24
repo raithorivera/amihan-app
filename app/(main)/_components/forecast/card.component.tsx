@@ -29,7 +29,7 @@ export default function ForecastCardComponent({ item, unit }: ForecastCardCompon
       </div>
 
       <div className='mt-2 relative xl:mt-4'>
-        <Image src={getWeatherBanner(item?.weather?.[0]?.description, item?.weather?.[0]?.icon)} width={540} height={160} alt='Weather Image' />
+        <Image src={getWeatherBanner(item?.weather?.[0]?.description, item?.weather?.[0]?.icon)} width={540} height={160} alt='Weather Image' className='drop-shadow-md' />
 
         <div className='absolute bottom-3 left-4'>
           <h2 className='text-xl text-white font-light leading-none tracking-tighter select-none'>

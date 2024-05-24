@@ -19,12 +19,13 @@ export default function HeaderComponent({ weatherData, unit }: HeaderComponentPr
   const dateToday = new Date();
 
   return (
-    <div className='mt-10 px-8 py-4'>
-      <div className='flex items-center justify-between px-3'>
+    <div className='mt-4 md:mt-10 px-4 md:px-8 py-4'>
+      <div className='flex items-center justify-between px-0 md:px-3'>
         <div className=''>
           <h2 className='text-sm md:text-lg leading-tight'>
             <strong className='font-medium'>Today</strong>, {formatDate(dateToday)}
           </h2>
+
           <h1 className='text-xl md:text-4xl font-bold leading-tight tracking-tighter'>{`${weatherData?.name || ''}, ${weatherData?.sys?.country || ''}`}</h1>
           <p className='text-xs md:text-sm'>{`${weatherData?.coord?.lat || ''}, ${weatherData?.coord?.lon || ''}`}</p>
         </div>
@@ -35,7 +36,7 @@ export default function HeaderComponent({ weatherData, unit }: HeaderComponentPr
       <SearchFormComponent />
 
       <div className='mt-4 md:mt-6 relative'>
-        <Image src={getWeatherBanner(weatherData?.weather?.[0]?.description, weatherData?.weather?.[0]?.icon)} width={1540} height={160} alt='Weather Image' className='shadow-lg rounded-[46px] lg:rounded-[20px]' />
+        <Image src={getWeatherBanner(weatherData?.weather?.[0]?.description, weatherData?.weather?.[0]?.icon)} width={1540} height={160} alt='Weather Image' className='drop-shadow-md' />
 
         <div className='absolute bottom-3 md:bottom-5 left-6'>
           <h2 className='text-2xl md:text-5xl text-white font-light leading-none tracking-tighter select-none'>
