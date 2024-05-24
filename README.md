@@ -4,7 +4,7 @@ This application is a weather forecasting tool that leverages the [OpenWeatherMa
 
 #### Why "Amihan"?
 
-<img src="public/images/logo/amihan-white-bg.png" alt="Amihan Logo" title="Amihan Logo" style="width: 220px; margin: 20px auto 30px;">
+<img src="public/images/logo/amihan-white-bg-2.png" alt="Amihan Logo" title="Amihan Logo" style="width: 220px; margin: 20px auto 30px;">
 
 The name "Amihan" is a Tagalog word that refers to the cool northeast wind or winter storm experienced in the Philippines. This name was chosen for the app because it symbolizes the essence of weather patterns and the importance of understanding and preparing for them.
 
