@@ -101,6 +101,41 @@ This will compile the production build of the application and start it to the de
 
 ---
 
+### Project Structure
+
+Below is an outline of the key directories and files in the Amihan project:
+
+```
+.
+├── .next                    # Compiled output
+├── api
+│   ├── forecast             # API logic for weather forecasts
+│   └── weather              # API logic for current weather data
+├── app
+│   ├── _components          # Shared React components
+│   │   ├── forecast         # Components specific to weather forecasts
+│   │   └── weather          # Components specific to current weather data
+│   └── _hooks               # React hooks
+├── components               # UI components
+│   └── ui                   # Basic UI components
+├── config                   # Configuration files for the application
+├── constant                 # Constants used throughout the application
+├── providers                # Context providers for state management, tanstack etc.
+├── public                   # Static files like images and favicons
+│   └── images               # Image files
+├── server                   # Server configurations
+│   ├── nginx.txt            # Nginx server configuration
+│   └── supervisor.txt       # Supervisor process management config
+├── types                    # TypeScript types
+├── util                     # Utility functions
+├── .env.sample              # Sample environment configuration
+├── README.md                # This README file
+├── LICENSE                  # The license details
+├── package.json             # NPM package configuration
+└── tsconfig.json            # TypeScript configuration
+```
+---
+
 ### Technology Stack
 
 #### Frontend
