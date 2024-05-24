@@ -10,8 +10,6 @@ The name "Amihan" is a Tagalog word that refers to the cool northeast wind or wi
 
 The Amihan winds are known for bringing cooler temperatures and pleasant weather, making it an apt metaphor for an app that aims to provide accurate and timely weather information. Just as the Amihan winds bring a welcome change to the tropical climate, this app aims to bring a fresh and reliable weather forecasting experience to its users.
 
-Sure, I can help you create a similar README guide tailored for your application hosted at `amihan.codebracket.xyz` and using the repository `https://github.com/raithorivera/amihan-app.git`. Here's a sample README that you could adapt for your project:
-
 ##### Demo 👉 [https://amihan.codebracket.xyz](https://amihan.codebracket.xyz)
 
 This is an example frontend for the Amihan application, powered by Next.js.
