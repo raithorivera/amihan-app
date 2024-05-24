@@ -39,7 +39,7 @@ export default function ForecastComponent({ children }: ForecastComponentProps) 
             <h1 className='text-xl font-semibold uppercase tracking-wide border-b-2 border-slate-50 pb-4'>Weather Forecast</h1>
           </div>
 
-          <ChartsComponent />
+          <ChartsComponent forecastList={forecastList} />
 
           <div className='grid grid-cols-1 2xl:grid-cols-3 md:grid-cols-2 gap-6 mt-6'>
             {forecastList.map((item) => (
