@@ -14,7 +14,17 @@ Sure, I can help you create a similar README guide tailored for your application
 
 This is an example frontend for the Amihan application, powered by Next.js.
 
-![Homepage Screenshot](public/images/nature-no-moon.svg "Homepage of Amihan App")
+##### Desktop View
+
+![Desktop Homepage Screenshot](public/images/demo/desktop-homepage.png "Desktop Homepage of Amihan App")
+
+##### Mobile View
+
+<div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
+  <img src="public/images/demo/mobile-1.jpg" alt="Mobile View 1" title="Mobile Homepage View 1" style="width: 30%; margin: 10px;">
+  <img src="public/images/demo/mobile-2.jpg" alt="Mobile View 2" title="Mobile Homepage View 2" style="width: 30%; margin: 10px;">
+  <img src="public/images/demo/mobile-3.jpg" alt="Mobile View 3" title="Mobile Homepage View 3" style="width: 30%; margin: 10px;">
+</div>
 
 ---
 
