@@ -13,17 +13,12 @@ export async function fetchData(endpoint: string, params: Record<string, string>
     url.searchParams.append(key, params[key]);
   });
 
-  try {
-    const response = await fetch(url.toString());
+  const response = await fetch(url.toString());
 
-    if (!response.ok) {
-      throw new Error(`Error fetching weather data: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error: any) {
-    console.error('Error fetching weather data:', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`Error fetching weather data: ${response.statusText}`);
   }
+
+  const data = await response.json();
+  return data;
 }
