@@ -132,3 +132,17 @@ This will compile the production build of the application and start it to the de
 - **DigitalOcean**: A cloud infrastructure provider offering Virtual Private Servers (VPS), storage, and networking features, known for its simplicity and scaling capabilities, making it a popular choice for deploying and managing applications and development environments.
 
 ---
+
+#### Contributions
+
+Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
+
+#### License
+
+Licensed under the MIT License, Copyright © 2024
+
+See [LICENSE](LICENSE) for more information.
+
+---
+
+Made with ♥ by **raithorivera**.
