@@ -63,7 +63,7 @@ export default function SearchFormComponent() {
             )}
           />
 
-          <Button type='submit' size='sm' className='absolute top-[10px] right-[24px]' disabled={!form?.formState?.isValid || searchMutation?.isPending}>
+          <Button type='submit' size='sm' className='absolute top-[10px] right-3 md:right-[24px]' disabled={!form?.formState?.isValid || searchMutation?.isPending}>
             Search
           </Button>
         </form>

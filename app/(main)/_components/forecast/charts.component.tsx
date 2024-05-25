@@ -31,8 +31,8 @@ export default function ChartsComponent({ forecastList }: ChartsComponentProps) 
   }, [forecastList]);
 
   // Calculate min and max values for the Y-axis
-  const yMin = Math.min(...data.map((item) => item.min));
-  const yMax = Math.max(...data.map((item) => item.max));
+  const yMin = Math.min(...data.map((item) => item.min)) - 1;
+  const yMax = Math.max(...data.map((item) => item.max)) + 1;
 
   return (
     <div className='h-[200px]'>
@@ -46,7 +46,8 @@ export default function ChartsComponent({ forecastList }: ChartsComponentProps) 
             bottom: 0
           }}>
           <CartesianGrid strokeDasharray='3 3' fill='#f7f7f7' fillOpacity={0.6} />
-          <YAxis domain={[yMin, yMax]} tick={false} label={''} hide={true} />
+          <YAxis domain={[yMin, yMax]} tickFormatter={(tick) => tick.toFixed(2)} label={''} hide={true} />
+
           <Tooltip
             content={({ active, payload }) => {
               if (active && payload && payload.length) {
@@ -59,15 +60,15 @@ export default function ChartsComponent({ forecastList }: ChartsComponentProps) 
                     <div className='grid grid-cols-3 gap-2'>
                       <div className='flex flex-col'>
                         <span className='text-[0.70rem] uppercase text-muted-foreground'>temp</span>
-                        <span className='font-bold'>{payload[0].value}</span>
+                        <span className='font-bold'>{payload[0].payload.temp}</span>
                       </div>
                       <div className='flex flex-col'>
                         <span className='text-[0.70rem] uppercase text-muted-foreground'>min</span>
-                        <span className='font-bold text-muted-foreground'>{payload[1].value}</span>
+                        <span className='font-bold text-muted-foreground'>{payload[0].payload.min}</span>
                       </div>
                       <div className='flex flex-col'>
                         <span className='text-[0.70rem] uppercase text-muted-foreground'>max</span>
-                        <span className='font-bold text-muted-foreground'>{payload[2].value}</span>
+                        <span className='font-bold text-muted-foreground'>{payload[0].payload.max}</span>
                       </div>
                     </div>
                   </div>
