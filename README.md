@@ -21,9 +21,9 @@ The above demo link is for the frontend of Amihan application, powered by Next.j
 ##### Mobile View
 
 <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
-  <img src="public/images/demo/mobile-1.jpg" alt="Mobile View 1" title="Mobile Homepage View 1" style="width: 30%; margin: 10px;">
-  <img src="public/images/demo/mobile-2.jpg" alt="Mobile View 2" title="Mobile Homepage View 2" style="width: 30%; margin: 10px;">
-  <img src="public/images/demo/mobile-3.jpg" alt="Mobile View 3" title="Mobile Homepage View 3" style="width: 30%; margin: 10px;">
+  <img src="public/images/demo/new-mobile-1.jpg" alt="Mobile View 1" title="Mobile Homepage View 1" style="width: 30%; margin: 10px;">
+  <img src="public/images/demo/new-mobile-2.jpg" alt="Mobile View 2" title="Mobile Homepage View 2" style="width: 30%; margin: 10px;">
+  <img src="public/images/demo/new-mobile-3.jpg" alt="Mobile View 3" title="Mobile Homepage View 3" style="width: 30%; margin: 10px;">
 </div>
 
 #### Video Demos
@@ -212,6 +212,7 @@ Below is an outline of the key directories and files in the Amihan project:
   - **Axios**: A promise-based HTTP client suitable for both browser and Node.js environments, utilized in conjunction with React Query to handle data retrieval from the server.
 - **Tanstack - React Query**: A library for managing server-state in React applications. It makes fetching, caching, synchronizing and updating server state in the applications a breeze.
 - **Tanstack - React Hook Form**: TanStack Form is a comprehensive form management solution designed for web applications, featuring robust TypeScript support and framework-agnostic components. It addresses the common shortcomings of web frameworks that lack efficient form handling, by offering features like reactive data binding, complex validations, and extensive support for accessibility and internationalization.
+  - **Zod-resolver**: A resolver for React Hook Form that integrates Zod, a TypeScript-first schema declaration and validation library, providing a powerful and type-safe way to handle form validation.
 - **Lucide-react**: A collection of simply beautiful open-source icons.
 - **date-fns**: A modern JavaScript date utility library.
 - **Sonner**: A library for creating beautiful toast notifications.
